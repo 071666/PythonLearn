@@ -33,6 +33,7 @@ hundred = int((n - ten * 10 - single) / 100)
 
 print(single, ten, hundred)
 
+# 简单实现
 hundred = n // 100
 ten = n // 10 % 10
 single = n % 10
