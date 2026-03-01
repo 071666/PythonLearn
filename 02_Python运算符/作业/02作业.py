@@ -6,23 +6,39 @@ print(f"需要{time1}分钟可以达到中山")
 #     高速最快可120km/h速度行驶，城市道路最快60km/h行驶, 求最快多久可以到达目的地？
 highSpeedTime = round(700 / 120, 2)
 cityTime = round(100 / 60, 2)
+hour = int((highSpeedTime + cityTime) // 1)
+minute = int((highSpeedTime + cityTime - hour) * 60)
 
-print("最快{}小时{}分钟可以到达目的地")
+print(f"最快{hour}小时{minute}分钟可以到达目的地")
 
 # 3. 华氏温度转摄氏温度
 #  【提示：将华氏温度转换为摄氏温度(F是华氏温度)  F = 1.8C + 32】
-
+F = 100
+C = round((F - 32) / 1.8, 2)
+print(C)
 
 # 4, 小红刚入职一家企业月薪10K，合同期3年，老板同意每年给他涨幅入职薪水的20%，
 #       问合同到期后小红的工资是多少？此时老板催促续签合同，如果你是小红 是否会继续待在公司?
-
+salary = 10
+salary += salary * 0.2 * 3
+print(f"同到期后小红的工资是{salary}K")
 
 # 5, 为抵抗洪水，战士连续作战89小时，编程计算共多少天零多少小时？
-
+day = 89 // 24
+print("共{}天零{}小时".format(day, 89 % 24))
 
 # 6, 给定一个5位数，分别把这个数字的万位，千位，百位、十位、个位算出来并显示。如： 12345
 #    提示： 可以使用运算符整除// 和 求余%
-
+num = 12345
+print("万位{}".format(num // 10000))
+print("千位{}".format(num // 1000 % 10))
+print("百位{}".format(num // 100 % 10))
+print("十位{}".format(num // 10 % 10))
+print("个位{}".format(num % 10))
 
 # 7. BMI（身体质量指数）的计算公式为BMI=体重（千克）/身高的平方（米）
 #   请输入您的身高 和 体重，计算BMI值，判断是否在18.5~25之间？
+height = float(input("请输入您的身高（米）："))
+weight = float(input("请输入您的体重（千克）："))
+BMI = round(weight / (height ** 2), 2)
+print(BMI, 18.5 < BMI < 25)
